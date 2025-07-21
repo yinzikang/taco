@@ -1,0 +1,31 @@
+<mujoco model="Quadcopter">
+  <option timestep="0.002" integrator="RK4" gravity="0 0 -9.81">
+    <flag sensornoise="disable" contact="enable" energy="enable"/>
+  </option>
+
+  <compiler angle="degree" coordinate="local" inertiafromgeom="true" />
+
+  <worldbody>
+  	<light diffuse=".5 .5 .5" pos="0 0 3" dir="0 0 -1"/>
+		<geom type="plane" size="5 5 0.1" rgba=".9 0 0 1"/>
+    <!--robot -->
+    <body name="chassis" pos="0 0 0" euler="0 0 0">
+		<geom mass="0.1" pos="0 0 0" size="0.05 0.015" type="cylinder" />
+    <joint name="x" type="slide" pos ="0 0 0.0" axis="1 0 0" />
+    <joint name="z" type="slide" pos ="0 0 0.0" axis="0 0 1" />
+    <joint name="pin" type="hinge" pos ="0 0 0.0" axis="0 -1 0" />
+    	<body name="rotor_arm0" pos="0.1 0. 0." quat="0.707 0. 0.707 0.">
+      	<geom mass="0.05" size="0.01 0.1" type="capsule" />
+      	<body name="rotor0" pos="0. 0. 0.1" quat="0.707 0 -0.707 0">
+        	<geom mass="0.15" size="0.04 0.005" type="cylinder" />
+      	</body>
+    	</body>
+      <body name="rotor_arm1" pos="-0.1 0 0" quat="0.707 0. 0.707 0">
+        <geom mass="0.05" size="0.01 0.1" type="capsule" />
+        <body name="rotor2" pos="0. 0 -0.1" quat="0.707 0. -0.707 0.">
+          <geom mass="0.15" size="0.04 0.005" type="cylinder" />
+        </body>
+      </body> 
+    </body>
+  </worldbody>
+</mujoco>

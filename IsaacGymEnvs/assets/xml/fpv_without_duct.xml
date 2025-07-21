@@ -1,0 +1,45 @@
+<mujoco model="Quadcopter">
+    <compiler angle="degree" coordinate="local" inertiafromgeom="false"/>
+    <worldbody>
+        <body name="chassis" pos="0 0 0">
+            <geom type="box" size="0.078 0.015 0.02" pos="0 0 0"/>
+            <inertial mass="0.46" diaginertia="0.0005 0.0007 0.0008"/>
+            <!--      1号转子-->
+            <body name="rotor_arm0" pos="0.047 0.059 0" quat="1 0 0 0">
+                <geom type="box" size="0.001 0.001 0.001"/>
+                <inertial mass="0.0000001" diaginertia="0.0000001 0.0000001 0.0000001"/>
+                <body name="rotor0" pos="0 0 0.02" quat="1 0 0 0">
+                    <geom type="cylinder" size="0.0381 0.004"/>
+                    <inertial mass="0.0000001" diaginertia="0.0000001 0.0000001 0.0000001"/>
+                </body>
+            </body>
+            <!--      2号转子-->
+            <body name="rotor_arm1" pos="-0.047 0.059 0" quat="1 0 0 0">
+                <geom type="box" size="0.001 0.001 0.001"/>
+                <inertial mass="0.0000001" diaginertia="0.0000001 0.0000001 0.0000001"/>
+                <body name="rotor1" pos="0 0 0.02" quat="1 0 0 0">
+                    <geom type="cylinder" size="0.0381 0.004"/>
+                    <inertial mass="0.0000001" diaginertia="0.0000001 0.0000001 0.0000001"/>
+                </body>
+            </body>
+            <!--      3号转子-->
+            <body name="rotor_arm2" pos="-0.047 -0.059 0" quat="1 0 0 0">
+                <geom type="box" size="0.001 0.001 0.001"/>
+                <inertial mass="0.0000001" diaginertia="0.0000001 0.0000001 0.0000001"/>
+                <body name="rotor2" pos="0 0 0.02" quat="1 0 0 0">
+                    <geom type="cylinder" size="0.0381 0.004"/>
+                    <inertial mass="0.0000001" diaginertia="0.0000001 0.0000001 0.0000001"/>
+                </body>
+            </body>
+            <!--      四号转子-->
+            <body name="rotor_arm3" pos="0.047 -0.059 0" quat="1 0 0 0">
+                <geom type="box" size="0.001 0.001 0.001"/>
+                <inertial mass="0.0000001" diaginertia="0.0000001 0.0000001 0.0000001"/>
+                <body name="rotor3" pos="0 0 0.02" quat="1 0 0 0">
+                    <geom type="cylinder" size="0.0381 0.004"/>
+                    <inertial mass="0.0000001" diaginertia="0.0000001 0.0000001 0.0000001"/>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+</mujoco>

@@ -1,0 +1,33 @@
+<mujoco model="Quadcopter">
+  <compiler angle="degree" coordinate="local" inertiafromgeom="true" />
+  <worldbody>
+    <body name="chassis" pos="0 0 0">
+      <geom mass="0.1" pos="0 0 0" size="0.1 0.015" type="cylinder" />
+      <joint name="root_joint" type="free" />
+      <body name="rotor_arm0" pos="0.0724784 0.0724784 0" quat="0.92388 0 0 0.382683">
+        <geom mass="0.025" size="0.01" type="sphere" />
+        <body name="rotor0" pos="0.0425 0 0" quat="1 0 0 0">
+          <geom mass="0.1" size="0.04 0.005" type="cylinder" />
+        </body>
+      </body>
+      <body name="rotor_arm1" pos="-0.0724785 0.0724784 0" quat="0.382683 0 0 0.92388">
+        <geom mass="0.025" size="0.01" type="sphere" />
+        <body name="rotor1" pos="0.0425 0 0" quat="1 0 0 0">
+          <geom  mass="0.1" size="0.04 0.005" type="cylinder" />
+        </body>
+      </body>
+      <body name="rotor_arm2" pos="-0.0724785 -0.0724784 0" quat="-0.382683 0 0 0.92388">
+        <geom mass="0.025" size="0.01" type="sphere" />
+        <body name="rotor2" pos="0.0425 0 0" quat="1 0 0 0">
+          <geom mass="0.1" size="0.04 0.005" type="cylinder" />
+        </body>
+      </body>
+      <body name="rotor_arm3" pos="0.0724784 -0.0724785 0" quat="-0.92388 0 0 0.382683">
+        <geom mass="0.025" size="0.01" type="sphere" />
+        <body name="rotor3" pos="0.0425 0 0" quat="1 0 0 0">
+          <geom  mass="0.1" size="0.04 0.005" type="cylinder" />
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>
